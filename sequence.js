@@ -11,3 +11,21 @@
 //some pattern with index and factors…
 
 //a and b make c, (a)b and c make d, ((a)b)c) and d make e, etc.
+//
+
+var linearArray = [0, 3, 6, 9];
+var multArray = [0, 3, 6, 9, 12];
+var squArray = [1, 3, 9, 81];
+
+//check first to see if it is linear
+
+var isLinear = function(arr){
+  if (arr[1] - arr[0] === arr[2] - arr[1]){
+    console.log("next number in sequence is " + (arr[arr.length-1] + (arr[2] - arr[1])));
+  }
+  else {
+    
+  }
+}
+
+isLinear(linearArray);
