@@ -24,8 +24,12 @@ var isLinear = function(arr){
     console.log("next number in sequence is " + (arr[arr.length-1] + (arr[2] - arr[1])));
   }
   else {
-    
+    //find all the factors of the largest (last) member of array
   }
+}
+
+var findFactors = function(arr){
+
 }
 
 isLinear(linearArray);
