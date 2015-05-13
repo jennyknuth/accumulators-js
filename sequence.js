@@ -27,13 +27,13 @@ var nextInSequence = function(arr){
     nextNumber = arr[arr.length-1] + (arr[2] - arr[1]);
     console.log("next number in sequence is " + nextNumber);
   }
-  else if (arr[3] % arr[1] === 0 && arr[3]/arr[1] === arr[2]){
-    //if second number in array is a factor of last number and increasing by that factor,
+  else if (arr[3]/arr[2] === arr[2]/arr[1]){
+    //if increasing by a factor
     //then multiply last number by that factor
-    nextNumber = (arr[arr.length-1] * arr[1]);
+    nextNumber = (arr[arr.length-1] * (arr[3]/arr[2]));
     console.log("next number in sequence is " + nextNumber);
   }
-  else if (arr[3] % arr[1] === 0 && arr[3]/arr[1] === arr[1]*arr[2]) {
+  else if (arr[3] === arr[2] * arr[2]) {
     //if increasing exponentially
     nextNumber = (arr[arr.length-1]*arr[arr.length-1]);
     console.log("next number in sequence is " + nextNumber);
@@ -43,3 +43,9 @@ var nextInSequence = function(arr){
 nextInSequence(linearArray);
 nextInSequence(multArray);
 nextInSequence(squArray);
+
+nextInSequence([3, 6, 9]);
+nextInSequence([1, 2, 4, 8, 16, 32]);
+nextInSequence([5, 25, 625, 390625]);
+nextInSequence([3, 12, 48, 192]);
+nextInSequence([6, 36, 216, 1296]);
