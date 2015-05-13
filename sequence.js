@@ -14,22 +14,29 @@
 //
 
 var linearArray = [0, 3, 6, 9];
-var multArray = [0, 3, 6, 9, 12];
+var multArray = [1, 3, 9, 27];
 var squArray = [1, 3, 9, 81];
 
 //check first to see if it is linear
 
-var isLinear = function(arr){
+var nextInSequence = function(arr){
+  var nextNumber = 0;
   if (arr[1] - arr[0] === arr[2] - arr[1]){
-    console.log("next number in sequence is " + (arr[arr.length-1] + (arr[2] - arr[1])));
+    nextNumber = arr[arr.length-1] + (arr[2] - arr[1]);
+    console.log("next number in sequence is " + nextNumber);
   }
-  else {
-    //find all the factors of the largest (last) member of array
+  else if (arr[3] % arr[1] === 0 && arr[3]/arr[1] === arr[2]){
+    //if second number in array is a factor of last number and increasing by that factor,
+    //then multiply last number by that factor
+    nextNumber = (arr[arr.length-1] * arr[1]);
+    console.log("next number in sequence is " + nextNumber);
   }
-}
+  else if (arr[3] % arr[1] === 0 && arr[3]/arr[1] === arr[1]*arr[2]) {
+    nextNumber = (arr[arr.length-1]*arr[arr.length-1]);
+    console.log("next number in sequence is " + nextNumber);
+  }
+};
 
-var findFactors = function(arr){
-
-}
-
-isLinear(linearArray);
+nextInSequence(linearArray);
+nextInSequence(multArray);
+nextInSequence(squArray);
